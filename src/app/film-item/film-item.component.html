@@ -5,9 +5,10 @@
     <div *ngIf="!brief">
     <div class="movies__desc"><span class="movies__option">Описание</span>{{filmData.overview}}</div>
     <div class="movies__desc"><span class="movies__option">Дата создания</span>{{filmData.release_date}}</div>
-    <div class="movies__desc"><span class="movies__option">Список жанров</span>{{genresName.join(', ')}}</div>
+    <div class="movies__desc"><span class="movies__option">Список жанров</span>{{genresName}}</div>
     <div class="movies__desc"><span class="movies__option">Рейтинг</span>{{filmData.vote_average}}</div>
     <div class="movies__desc"><span class="movies__option">Количество проголосовавших</span>{{filmData.vote_count}}</div>
     </div>
   </div>
 </a>
+

@@ -1,8 +1,8 @@
 <div class="popular">
-  <h1>Популярные фильмы</h1>
-  <swiper  *ngIf="popularMovies" [config]="config">
+  <h1>{{title}}</h1>
+  <swiper  *ngIf="data" [config]="config">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"  *ngFor="let filmData of popularMovies">
+      <div class="swiper-slide"  *ngFor="let filmData of data">
         <app-film-item [filmData]="filmData" [brief]="true"></app-film-item>
       </div>
     </div>

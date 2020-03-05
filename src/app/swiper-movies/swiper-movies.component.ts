@@ -1,23 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SwiperOptions} from 'swiper';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
-  selector: 'app-popular-movies',
-  templateUrl: './popular-movies.component.html',
-  styleUrls: ['./popular-movies.component.scss'],
+  selector: 'app-swiper-movies',
+  templateUrl: './swiper-movies.component.html',
+  styleUrls: ['./swiper-movies.component.scss'],
 })
-export class PopularMoviesComponent implements OnInit {
+export class SwiperMoviesComponent implements OnInit {
 
-  popularMovies: any;
+  @Input() title: string;
+  @Input() data: [];
 
-  constructor(private http: HttpClient) {
-    this.http.get('https://api.themoviedb.org/3/movie/popular?api_key=38308cf7453d538f82afb3ebd561647d&page=1', {
-    }).subscribe(response => {
-      // @ts-ignore
-      this.popularMovies = response.results;
-    });
-
+  constructor() {
   }
 
   config: SwiperOptions = {

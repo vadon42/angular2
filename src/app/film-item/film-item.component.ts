@@ -14,17 +14,19 @@ export class FilmItemComponent implements OnInit {
   @Input() filmData;
   @Input() brief;
 
-  public genresName: [] = [];
+  public genresName: string;
 
   constructor(private http: HttpClient, private genres: GenresService) {
   }
 
   ngOnInit() {
-    this.genresName = this.genres.getData.reduce((array, genre) => {
-      if (this.filmData.genre_ids.indexOf(genre.id) !== -1) {
-        array.push(genre.name);
-      }
-      return array;
-    }, []);
+    if (!this.brief) {
+      this.genresName = this.genres.getData.reduce((array, genre) => {
+        if (this.filmData.genre_ids.indexOf(genre.id) !== -1) {
+          array.push(genre.name);
+        }
+        return array;
+      }, []).join(', ');
+    }
   }
 }

@@ -11,13 +11,18 @@ import {ActivatedRoute} from "@angular/router";
 export class MoviesComponent implements OnInit {
 
   public movies: {};
+  public recommendations: any;
 
   constructor(private location: Location, private http: HttpClient, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
       this.http.get('https://api.themoviedb.org/3/movie/' + params.id + '?api_key=38308cf7453d538f82afb3ebd561647d', {
       }).subscribe(response => {
         this.movies = response;
-        // console.log(this.movies.production_companies)
+
+        this.http.get('https://api.themoviedb.org/3/movie/' + this.movies.id + '/recommendations?api_key=38308cf7453d538f82afb3ebd561647d', {
+        }).subscribe(response => {
+          this.recommendations = response.results;
+        })
       });
     });
 
