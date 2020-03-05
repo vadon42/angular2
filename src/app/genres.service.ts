@@ -11,6 +11,7 @@ export class GenresService {
   constructor(private http: HttpClient) {
     this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=38308cf7453d538f82afb3ebd561647d', {
     }).subscribe(response => {
+      // @ts-ignore
       this.genres = response.genres;
     });
   }
@@ -18,4 +19,5 @@ export class GenresService {
   public get getData() {
     return this.genres;
   }
+
 }

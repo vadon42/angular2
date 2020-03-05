@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import {SwiperOptions} from "swiper";
-import {HttpClient} from "@angular/common/http"
+import {SwiperOptions} from 'swiper';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-popular-movies',
@@ -20,39 +20,35 @@ export class PopularMoviesComponent implements OnInit {
 
   }
 
-  //
-  //
-  // config: SwiperOptions = {
-  //   loop: true,
-  //   loopFillGroupWithBlank: true,
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     clickable: true,
-  //   },
-  //   navigation: {
-  //     nextEl: '.swiper-button-next',
-  //     prevEl: '.swiper-button-prev',
-  //   },
-  //
-  //   breakpoints: {
-  //     // when window width is >= 640px
-  //     1200: {
-  //       slidesPerView: 4,
-  //       slidesPerGroup: 4,
-  //     },
-  //
-  //     992: {
-  //       slidesPerView: 3,
-  //       slidesPerGroup: 3,
-  //     },
-  //
-  //     600: {
-  //       slidesPerView: 2,
-  //       slidesPerGroup: 2,
-  //     }
-  //   }
-  // };
-  //
+  config: SwiperOptions = {
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    breakpoints: {
+      1200: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+
+      992: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+
+      600: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      }
+    }
+  };
 
   ngOnInit() {
   }

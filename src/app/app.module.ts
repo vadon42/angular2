@@ -12,13 +12,12 @@ import { ForNumberPipe } from './for-number.pipe';
 import { MoviesComponent } from './page/movies/movies.component';
 import { SearchComponent } from './search/search.component';
 import { PopularMoviesComponent } from './popular-movies/popular-movies.component';
-// import {NgxUsefulSwiperModule} from 'ngx-useful-swiper';
+import {NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 
 const appRoutes: Routes = [
   { path: 'movies/:id', component: MoviesComponent },
   { path: 'list', component: ListComponent },
   { path: 'list/:id', component: ListComponent }
-  // { path: '**', component: NotFoundComponent }
 ];
 
 
@@ -36,7 +35,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
-    // NgxUsefulSwiperModule,
+    NgxUsefulSwiperModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule
