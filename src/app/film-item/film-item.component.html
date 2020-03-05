@@ -10,5 +10,6 @@
     <div class="movies__desc"><span class="movies__option">Количество проголосовавших</span>{{filmData.vote_count}}</div>
     </div>
   </div>
+  <button *ngIf="!brief" class="button" [ngClass]="favorites ? 'button--favorites' : ''" (click)="setFavorites($event , filmData.id)">{{favorites ? 'Уже в избранном': 'Добавить в избранное'}}</button>
 </a>
 

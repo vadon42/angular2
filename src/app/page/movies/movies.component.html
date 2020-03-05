@@ -8,13 +8,16 @@
       <div class="movies__desc"><span class="movies__option">Название</span>{{movies.title}}</div>
       <div class="movies__desc"><span class="movies__option">Описание</span>{{movies.overview}}</div>
       <div class="movies__desc"><span class="movies__option">Дата создания</span>{{movies.release_date}}</div>
-<!--          <div class="movies__desc"><span class="movies__option">Список жанров</span>{{movies.join(', ')}}</div>-->
       <div class="movies__desc"><span class="movies__option">Рейтинг</span>{{movies.vote_average}}</div>
       <div class="movies__desc"><span class="movies__option">Количество проголосовавших</span>{{movies.vote_count}}</div>
       <div class="movies__desc"><span class="movies__option">Продолжительность</span>{{movies.runtime}}</div>
       <div class="movies__desc"><span class="movies__option">Бюджет</span>{{movies.budget}}</div>
       <div class="movies__desc"><span class="movies__option">Рекомендованные</span>{{movies.budget}}</div>
+    <button class="button" [ngClass]="favorites ? 'button--favorites' : ''" (click)="setFavorites(movies.id)">{{favorites ? 'Уже в избранном': 'Добавить в избранное'}}</button>
     </div>
+
+
+
   </div>
 </div>
 <app-swiper-movies title="Рекомендованные фильмы" [data]="recommendations"></app-swiper-movies>

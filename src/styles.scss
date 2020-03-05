@@ -18,3 +18,15 @@ h1 {
   font-size: 24px;
   text-align: center;
 }
+
+.button {
+  padding: 10px;
+  border: 0;
+  background: #e0e0e0;
+  &--favorites {
+    background: #2f3ad6;
+    color: #fff;
+  }
+}
+
+

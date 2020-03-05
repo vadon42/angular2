@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GenresService} from '../genres.service';
+import {LocalStorageService} from "../local-storage.service"
 
 
 
@@ -15,11 +16,21 @@ export class FilmItemComponent implements OnInit {
   @Input() brief;
 
   public genresName: string;
+  public favorites: boolean;
 
-  constructor(private http: HttpClient, private genres: GenresService) {
+  constructor(private http: HttpClient, private genres: GenresService, private storage: LocalStorageService) {
   }
 
+  setFavorites(event, id) {
+    event.stopPropagation();
+    event.preventDefault();
+    this.favorites = this.storage.favorites(id);
+  }
+
+
   ngOnInit() {
+    this.favorites = this.storage.favorites().some(el => el === this.filmData.id);
+
     if (!this.brief) {
       this.genresName = this.genres.getData.reduce((array, genre) => {
         if (this.filmData.genre_ids.indexOf(genre.id) !== -1) {
