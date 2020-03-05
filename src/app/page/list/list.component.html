@@ -1,0 +1,12 @@
+<app-pagination [count]="3"></app-pagination>
+<!--<app-popular-movies></app-popular-movies>-->
+<div class="films-block"></div>
+<h1>Фильмы</h1>
+<div class="filter">
+  Фильтр по названию <input type="text" (input)="search($event.target.value)">
+</div>
+<div  class="movies-block" *ngIf="movies">
+  <div *ngFor="let filmData of movies">
+    <app-film-item *ngIf="!filmData.filter" [filmData]="filmData"></app-film-item>
+  </div>
+</div>

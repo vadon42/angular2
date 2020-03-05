@@ -1,0 +1,49 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 10px rgba(#ccc, .5);
+  margin: 10px 5px;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  color: rgba(41, 41, 41, 0.69);
+  text-decoration: none;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__block-options {
+    padding: 10px;
+  }
+
+  &__option {
+    margin-right: 5px;
+    font-weight: bold;
+    &:after {
+      content: ' - ';
+    }
+  }
+
+  &__desc {
+    margin-bottom: 5px;
+  }
+
+  &--fixed {
+    height: 430px;
+
+    .movies__block-options {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .movies__desc {
+      margin: 0;
+    }
+  }
+}

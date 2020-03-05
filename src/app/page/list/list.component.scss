@@ -1,0 +1,19 @@
+.films-block {
+  margin-top: 30px;
+}
+
+.movies-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  input {
+    margin-left: 10px;
+  }
+}

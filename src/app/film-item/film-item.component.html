@@ -1,0 +1,13 @@
+<a [routerLink]="'/movies/' + filmData.id" class="movies" [ngClass]="brief ? 'movies--fixed' : ''">
+  <img class="movies__img" [src]="'https://image.tmdb.org/t/p/w500/' + filmData.poster_path" alt="">
+  <div class="movies__block-options">
+    <div class="movies__desc"><span *ngIf="!brief" class="movies__option">Название</span>{{filmData.title}}</div>
+    <div *ngIf="!brief">
+    <div class="movies__desc"><span class="movies__option">Описание</span>{{filmData.overview}}</div>
+    <div class="movies__desc"><span class="movies__option">Дата создания</span>{{filmData.release_date}}</div>
+    <div class="movies__desc"><span class="movies__option">Список жанров</span>{{genresName.join(', ')}}</div>
+    <div class="movies__desc"><span class="movies__option">Рейтинг</span>{{filmData.vote_average}}</div>
+    <div class="movies__desc"><span class="movies__option">Количество проголосовавших</span>{{filmData.vote_count}}</div>
+    </div>
+  </div>
+</a>

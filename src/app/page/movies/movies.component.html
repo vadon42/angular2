@@ -1,0 +1,18 @@
+<div class="content">
+  <a class="back-link" href="javascript:void(0)" (click)="location.back()">Назад</a>
+  <div class="movies" *ngIf="movies">
+    <img class="movies__img" [src]="'https://image.tmdb.org/t/p/w500/' + movies.poster_path" alt="">
+    <div class="movies__block-options">
+      <div class="movies__desc"><span class="movies__option">id</span>{{movies.id}}</div>
+      <div class="movies__desc"><span class="movies__option">Название</span>{{movies.title}}</div>
+      <div class="movies__desc"><span class="movies__option">Описание</span>{{movies.overview}}</div>
+      <div class="movies__desc"><span class="movies__option">Дата создания</span>{{movies.release_date}}</div>
+      <!--    <div class="movies__desc"><span class="movies__option">Список жанров</span>{{movies.join(', ')}}</div>-->
+      <div class="movies__desc"><span class="movies__option">Рейтинг</span>{{movies.vote_average}}</div>
+      <div class="movies__desc"><span class="movies__option">Количество проголосовавших</span>{{movies.vote_count}}</div>
+      <div class="movies__desc"><span class="movies__option">Продолжительность</span>{{movies.runtime}}</div>
+      <div class="movies__desc"><span class="movies__option">Бюджет</span>{{movies.budget}}</div>
+      <div class="movies__desc"><span class="movies__option">Рекомендованные</span>{{movies.budget}}</div>
+    </div>
+  </div>
+</div>

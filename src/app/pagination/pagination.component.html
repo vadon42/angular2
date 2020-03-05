@@ -1,0 +1,5 @@
+<ul class="pagination" *ngIf="count">
+  <li class="pagination__li" *ngFor="let page of count | forNumber" >
+    <a class="pagination__a" [routerLink]="'/list/' + page"  routerLinkActive="active">{{page}}</a>
+  </li>
+</ul>
