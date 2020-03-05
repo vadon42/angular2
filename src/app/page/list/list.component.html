@@ -5,7 +5,7 @@
 <div class="filter">
   Фильтр по названию <input type="text" (input)="search($event.target.value)">
 </div>
-<div  class="movies-block" *ngIf="movies">
+<div  class="movies-block" *ngIf="movies && genres">
   <div *ngFor="let filmData of movies">
     <app-film-item *ngIf="!filmData.filter" [filmData]="filmData"></app-film-item>
   </div>

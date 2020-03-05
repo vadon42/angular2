@@ -17,25 +17,14 @@ export class FilmItemComponent implements OnInit {
   public genresName: [] = [];
 
   constructor(private http: HttpClient, private genres: GenresService) {
-
-    this.genres.getData.subscribe(response => {
-      // @ts-ignore
-      this.genresName = response.genres.reduce((array, genre) => {
-        if (this.filmData.genre_ids.indexOf(genre.id) !== -1) {
-          array.push(genre.name);
-        }
-        return array;
-      }, []);
-    });
-
   }
 
   ngOnInit() {
-
-
-
-
+    this.genresName = this.genres.getData.reduce((array, genre) => {
+      if (this.filmData.genre_ids.indexOf(genre.id) !== -1) {
+        array.push(genre.name);
+      }
+      return array;
+    }, []);
   }
-
-
 }

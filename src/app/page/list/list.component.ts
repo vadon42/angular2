@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from '@angular/router';
+import {GenresService} from "../../genres.service"
 
 @Component({
   selector: 'app-list',
@@ -10,7 +11,7 @@ import {ActivatedRoute} from '@angular/router';
 export class ListComponent implements OnInit {
   movies: any;
 
-  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute) {
+  constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private genres: GenresService) {
   }
 
   search(value) {

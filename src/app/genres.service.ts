@@ -6,17 +6,16 @@ import {HttpClient} from '@angular/common/http';
 })
 export class GenresService {
 
-  // private genres: any;
+  private genres: any;
 
   constructor(private http: HttpClient) {
-    // this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=38308cf7453d538f82afb3ebd561647d', {
-    // }).subscribe(response => {
-    //   this.genres = response.genres;
-    // });
-  }
-  // genres
-  public get getData() {
-     return this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=38308cf7453d538f82afb3ebd561647d')
+    this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=38308cf7453d538f82afb3ebd561647d', {
+    }).subscribe(response => {
+      this.genres = response.genres;
+    });
   }
 
+  public get getData() {
+    return this.genres;
+  }
 }
