@@ -9,10 +9,8 @@ import {GenresService} from "../../genres.service"
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  movies: any;
-
+  public movies: any;
   public popularMovies;
-
 
   constructor(private http: HttpClient, private activatedRoute: ActivatedRoute, private genres: GenresService) {
   }
@@ -26,7 +24,6 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.http.get('https://api.themoviedb.org/3/movie/popular?api_key=38308cf7453d538f82afb3ebd561647d&page=1', {
     }).subscribe(response => {
       // @ts-ignore
@@ -40,9 +37,5 @@ export class ListComponent implements OnInit {
         return this.movies = response.results;
       });
     });
-
-
-
   }
-
 }

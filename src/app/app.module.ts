@@ -10,7 +10,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ForNumberPipe } from './for-number.pipe';
 import { MoviesComponent } from './page/movies/movies.component';
-import { SearchComponent } from './search/search.component';
 import { SwiperMoviesComponent } from './swiper-movies/swiper-movies.component';
 import {NgxUsefulSwiperModule} from 'ngx-useful-swiper';
 
@@ -30,7 +29,6 @@ const appRoutes: Routes = [
     PaginationComponent,
     ForNumberPipe,
     MoviesComponent,
-    SearchComponent,
     SwiperMoviesComponent,
   ],
   imports: [

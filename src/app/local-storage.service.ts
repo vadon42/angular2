@@ -23,8 +23,12 @@ export class LocalStorageService {
     }
   }
 
-  favorites(id: number): boolean {
-    if (!id) { return this.get('favorites'); }
+  get getfavorites(): [] {
+    return  this.get('favorites');
+  }
+
+  setfavorites(id: number): boolean {
+    if (!id) { return; }
     else {
       const favorites = this.get('favorites') || [];
       const position = favorites.indexOf(id);

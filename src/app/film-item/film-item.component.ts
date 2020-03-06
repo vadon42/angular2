@@ -24,12 +24,12 @@ export class FilmItemComponent implements OnInit {
   setFavorites(event, id) {
     event.stopPropagation();
     event.preventDefault();
-    this.favorites = this.storage.favorites(id);
+    this.favorites = this.storage.setfavorites(id);
   }
 
 
   ngOnInit() {
-    this.favorites = this.storage.favorites().some(el => el === this.filmData.id);
+    this.favorites = this.storage.getfavorites.some(el => el === this.filmData.id);
 
     if (!this.brief) {
       this.genresName = this.genres.getData.reduce((array, genre) => {
